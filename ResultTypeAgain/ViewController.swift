@@ -44,7 +44,8 @@ class ViewController: UIViewController {
             
             do {
                 let courses = try JSONDecoder().decode([Course].self, from: data!)
-                print(courses)
+                //this is comment
+                print("hello")
                 completion(.success(courses))
             }catch let jsonError{
                 completion(.failure(jsonError))
