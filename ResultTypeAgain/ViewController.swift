@@ -32,8 +32,6 @@ class ViewController: UIViewController {
         }
 
     }
-
-
     
     fileprivate func fetchCoursesJSON(completion: @escaping (Result<[Course], Error>) -> ()){
         let urlString = "https://api.letsbuildthatapp.com/jsondecodable/courses"
@@ -46,6 +44,7 @@ class ViewController: UIViewController {
             
             do {
                 let courses = try JSONDecoder().decode([Course].self, from: data!)
+                print(courses)
                 completion(.success(courses))
             }catch let jsonError{
                 completion(.failure(jsonError))
